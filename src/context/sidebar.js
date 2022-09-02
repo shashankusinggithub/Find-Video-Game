@@ -1,16 +1,11 @@
-
-
 import React from 'react'
- 
 import "./sidebar.css"
+
 const Sidebar = (props) => {
-
   const modify = (event) => {
-
     let name = document.getElementById("nameInput").value;
     let score = document.getElementById("scoreValue").value;
     let order = document.getElementById("orderByInput").value;
-
     let actualsort = props.orderList
 
     if (document.getElementById("scoreValue").value > 9){
@@ -71,7 +66,6 @@ const Sidebar = (props) => {
         >Clear</button>
         </p></div></div>
     </div>
-
   )
 }
 

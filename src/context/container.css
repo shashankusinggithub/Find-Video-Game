@@ -25,12 +25,7 @@
     grid-column-gap: 2rem;
     column-gap: 1rem;
     height: 160px;
-    
     align-items: center;
-    /* white-space: nowrap;  */
-  /* width: 50px;  */
- 
-  /* text-overflow: ellipsis;  */
     
 }
 p{
