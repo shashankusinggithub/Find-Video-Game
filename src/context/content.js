@@ -4,17 +4,22 @@ import Container from './container'
 import Sidebar from './sidebar'
 
 const Content = () => {
+    const [loading, setLoading] = useState(false);
+    const [done,setDone]=useState(false);
     const [first, setfirst] = useState([])
     const [modlist, setModlist] = useState([])
     const [orderList, setOrderList] = useState(true);
 
     useEffect(() => {
+        setLoading(true)
         fetch('https://public.connectnow.org.uk/applicant-test/')
             .then((response) => response.json())
             .then((actualData) => {
                 setfirst(actualData)
                 setModlist(actualData)
+                setLoading(false)
             })
+            
 
             .catch((err) => {
                 console.log(err.message);
@@ -22,8 +27,6 @@ const Content = () => {
     }, []);
 
 
-
- 
 
     const modifyList = (name, score, order, sort) => {
 
@@ -54,36 +57,36 @@ const Content = () => {
                   }
                   return 0;
             })
-
-            // setOrderList(true)
-
-            
+   
         }}
 
         if (sort === true){
             console.log('reversed', orderList)
             list = list.reverse()
         }
-
- 
         setModlist(list)
-
-        
-
-
     }
 
-
-
     return (
-        <div className='flex flex-row space-x-10' >
+        <div>
+
+        { !loading  
+            ? <div className='flex flex-row space-x-10' >
             <Sidebar modifyList={modifyList} 
             setOrderList={setOrderList}
             orderList={orderList}/>
             <Container array={modlist} />
 
         </div>
+        
+        :
 
+        <div className='loading'>
+        <h2 > PLEASE WAIT LOADING VIDEO GAMES....</h2>
+        </div>
+    }
+
+    </div>
     )
 }
 

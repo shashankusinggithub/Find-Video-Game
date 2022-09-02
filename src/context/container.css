@@ -106,3 +106,16 @@ h3 {
     justify-content: center;
     align-items: center;
 }
+
+
+.loading{
+    height:100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    /* vertical-align:middle; */
+    text-align:center;
+    
+    color: #fff;
+    font-size: larger;
+}
