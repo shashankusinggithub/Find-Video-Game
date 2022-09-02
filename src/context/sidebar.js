@@ -1,7 +1,7 @@
 
 
 import React from 'react'
-
+ 
 import "./sidebar.css"
 const Sidebar = (props) => {
 
@@ -12,6 +12,13 @@ const Sidebar = (props) => {
     let order = document.getElementById("orderByInput").value;
 
     let actualsort = props.orderList
+
+    if (document.getElementById("scoreValue").value > 9){
+      alert("ENTER VALUES BETWEEN 1 TO 10")
+      document.getElementById("scoreValue").value  = null
+      modify()
+
+    }
 
     if (event.target && event.target.id === "orderByInput") {
       console.log("orderby changed")
