@@ -5,23 +5,34 @@ import "./container.css"
 const Container = (props) => {
 
 
+    const convrt = (code) => {
+        let date = new Date(code);
+        let [month, day, year] = [date.getMonth(), date.getDate(), date.getFullYear()];
+        // console.log(`${year}-${month}-${day}`)
+        return (
+            `${year}-${month}-${day}`
+        )
+    }
+
+
 
     return (
-        <div className='mainContent max-h-40'>
-            <h1>Container</h1>
+        <div className='mainContent mt-6'>
+            
 
             {props.array.map(name => (
 
-                <div className='card-container'>
-                    <div>
-                    <h2>{name.name}</h2>
-                    <h1> Release Date: {name.first_release_date}</h1>
-                    <p className='para'>{name.summary}</p>
+                <div className='card-container '>
+                    <div className="card-img truncate "></div>
+                    <div className='about'>
+                        <h2>{name.name}</h2>
+                        <h3 className='-mt-6'> Release Date: {convrt(name.first_release_date)}</h3>
+                        <p className='para'>{name.summary}</p>
 
                     </div>
-                    <div> 
+                    <div>
 
-                    <h2 className='score'>{parseInt(name.rating)/10}</h2>
+                        <h2 className='score'>{parseInt(name.rating) / 10}</h2>
                     </div>
                 </div>
 

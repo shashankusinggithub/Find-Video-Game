@@ -6,6 +6,7 @@ import Sidebar from './sidebar'
 const Content = () => {
     const [first, setfirst] = useState([])
     const [modlist, setModlist] = useState([])
+    const [orderList, setOrderList] = useState(true);
 
     useEffect(() => {
         fetch('https://public.connectnow.org.uk/applicant-test/')
@@ -20,11 +21,15 @@ const Content = () => {
             });
     }, []);
 
-    const modifyList = (name, score, order, orderList) => {
+
+
+ 
+
+    const modifyList = (name, score, order, sort) => {
 
         let list = first
 
-        console.log(order)
+        // setOrderList(sort)
 
         if (name)        
         {list = list.filter(game => game.name.toLowerCase().includes(name.toLowerCase()) )}
@@ -41,25 +46,26 @@ const Content = () => {
             }
             else if (order === "name"){
                 list.sort((a,b)=>{
-                if (a.name > b.value) {
+                if (a.name > b.name) {
                     return 1;
                   }
-                  if (a.value < b.value) {
+                  if (a.name < b.name) {
                     return -1;
                   }
                   return 0;
             })
+
+            // setOrderList(true)
+
+            
         }}
 
-        if (orderList){
+        if (sort === true){
+            console.log('reversed', orderList)
             list = list.reverse()
         }
-        
-        
 
-
-        
-
+ 
         setModlist(list)
 
         
@@ -70,8 +76,10 @@ const Content = () => {
 
 
     return (
-        <div className='flex flex-row space-x-20' >
-            <Sidebar modifyList={modifyList}/>
+        <div className='flex flex-row space-x-10' >
+            <Sidebar modifyList={modifyList} 
+            setOrderList={setOrderList}
+            orderList={orderList}/>
             <Container array={modlist} />
 
         </div>

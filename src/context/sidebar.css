@@ -1,9 +1,19 @@
 .sidebarOuter {
     display: block;
     grid-area: sidebarOuter;
+    
    
 }
 
+option, select {
+    height: 2rem;
+    width: 56%;
+    margin-top: 0.5rem;
+    background: #182c47;
+    /* background: #fff; */
+    border: none;
+    color: #c1d1e8;
+  }
 
 .sidebar-container {
     color: #fff;
@@ -17,7 +27,7 @@
     background-origin: initial;
     background-clip: initial;
     background-color: rgb(14, 26, 43);
-    padding: 8%;
+    padding: 6%;
 }
 
 button {
@@ -31,17 +41,29 @@ p {
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    /* background: #182c47; */
+
 }
 
 input[type="text" i] {
     padding: 1px 2px;
 }
 
+input, textarea {
+    width: 100%;
+    background: #182c47 !important;
+
+    border:#182c47;
+    line-height: 2;
+    margin-top: 0.5rem;
+    color: #c1d1e8;
+  }
+
 input {
     writing-mode: horizontal-tb !important;
    
     text-rendering: auto;
-    color: fieldtext;
+    color: #c1d1e8;
     letter-spacing: normal;
     word-spacing: normal;
     line-height: normal;

@@ -1,0 +1,32 @@
+.nav-title-shadow {
+    font-size: 47px;
+    color: #182a44;
+    font-weight: 600;
+    position: absolute;
+    top: -6%;
+    left: -4.5%;
+    z-index: -1;
+}
+
+.nav-container {
+    font-family: "Montserrat",sans-serif;
+    color: #fff;
+    grid-area: navbar;
+    position: relative;
+    padding-left: 4rem;
+}
+
+.nav-item-1, .nav-item-2 {
+    display: inline-block;
+    margin-right: 5%;
+    padding-left: 1.3em;
+    position: relative;
+    z-index: 1050;
+}
+
+a, a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+
