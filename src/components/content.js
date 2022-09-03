@@ -9,10 +9,7 @@ const Content = () => {
     const dispatch = useDispatch()
 
     const [loading, setLoading] = useState(false);
-    // const [first, setfirst] = useState([])
-    // const [modlist, setModlist] = useState([])
-    // const [orderList, setOrderList] = useState(true);
-
+    
     useEffect(() => {
         setLoading(true)
         fetch('https://public.connectnow.org.uk/applicant-test/')
@@ -26,41 +23,7 @@ const Content = () => {
             });
     }, []);
 
-    // const modifyList = (name, score, order, sort) => {
-
-    //     let list = first
-    //     if (name) {
-    //         list = list.filter(game => game.name.toLowerCase().includes(name.toLowerCase()))
-    //     }
-    //     if (score) {
-    //         list = list.filter(game => game.rating > score * 10)
-    //     }
-    //     if (order) {
-    //         if (order === "first_release_date") {
-    //             list.sort((a, b) => a.first_release_date - b.first_release_date)
-    //         }
-    //         else if (order === "rating") {
-    //             list.sort((a, b) => a.rating - b.rating)
-    //         }
-    //         else if (order === "name") {
-    //             list.sort((a, b) => {
-    //                 if (a.name > b.name) {
-    //                     return 1;
-    //                 }
-    //                 if (a.name < b.name) {
-    //                     return -1;
-    //                 }
-    //                 return 0;
-    //             })
-    //         }
-    //     }
-
-    //     if (sort === true) {
-    //         console.log('reversed', orderList)
-    //         list = list.reverse()
-    //     }
-    //     setModlist(list)
-    // }
+    
 
     return (
         <div>

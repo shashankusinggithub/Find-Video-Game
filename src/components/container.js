@@ -1,7 +1,7 @@
 import React from 'react'
 import "./container.css"
 import { useSelector, useDispatch } from 'react-redux'
-import { update } from '../features/games/gamesSlice'
+
 
 const Container = () => {
     const tempList = useSelector((state)=> {
