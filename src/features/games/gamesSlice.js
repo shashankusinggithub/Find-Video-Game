@@ -740,9 +740,10 @@ export const gamesSlice = createSlice({
                 }
             }
     
-            if (payload.sort === true) {
+            if (payload.actualsort === true) {
                 // console.log('reversed', orderList)
-                list = list.reverse()
+                console.log(list)
+                list = [...list].reverse()
             }
             // setModlist(list)
             return ({Alllist:list, loading:false})

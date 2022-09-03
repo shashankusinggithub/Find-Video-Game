@@ -1,18 +1,19 @@
-import React from 'react'
+import React, {useState} from 'react'
 import "./sidebar.css"
 import { update } from '../features/games/gamesSlice'
 import { useDispatch } from 'react-redux'
 
 
 
-const Sidebar = (props) => {
+const Sidebar = () => {
+  const [orderList, setOrderList] = useState(true);
   const dispatch =useDispatch()
 
   const modify = (event) => {
     let name = document.getElementById("nameInput").value;
     let score = document.getElementById("scoreValue").value;
     let order = document.getElementById("orderByInput").value;
-    let actualsort = props.orderList
+    let actualsort = orderList
 
     if (document.getElementById("scoreValue").value > 9){
       alert("ENTER VALUES BETWEEN 1 TO 10")
@@ -27,13 +28,13 @@ const Sidebar = (props) => {
     }
 
     if (event.target && event.target.id === "toggle") {
-      props.setOrderList(bol => !bol)
+      setOrderList(bol => !bol)
       actualsort = !actualsort
-      console.log("ordersortby changed", props.orderList, actualsort)
+      console.log("ordersortby changed", orderList, actualsort)
 
     }
 
-    console.log(name, score, order, props.orderList, actualsort)
+    console.log(name, score, order, orderList, actualsort)
     // props.modifyList(name, score, order, actualsort)
     dispatch(update({name, score, order, actualsort}))
   }
@@ -42,7 +43,7 @@ const Sidebar = (props) => {
     document.getElementById("nameInput").value = null
     document.getElementById("scoreValue").value = null
     document.getElementById("orderByInput").value = ''
-    props.setOrderList(true)
+    setOrderList(true)
     modify()
   }
 
@@ -60,7 +61,7 @@ const Sidebar = (props) => {
         </p>
         <p><label>Order By</label><div className='order' >
           <button id="toggle" value="btn" className="sorting-btn"
-            onClick={modify}>{props.orderList ? "↑" : "↓"}</button>
+            onClick={modify}>{orderList ? "↑" : "↓"}</button>
           <select id="orderByInput" onChange={modify}><option value=''>Order By</option>
             <option id="opt" value="first_release_date">Release Date</option>
             <option id="opt" value="rating">Score</option>
