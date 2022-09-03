@@ -3,7 +3,7 @@ import "./container.css"
 import { useSelector, useDispatch } from 'react-redux'
 import { update } from '../features/games/gamesSlice'
 
-const Container = (props) => {
+const Container = () => {
     const tempList = useSelector((state)=> {
         console.log(state.games)
         return (state.games.Alllist)})
