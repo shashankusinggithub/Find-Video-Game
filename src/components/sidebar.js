@@ -1,7 +1,13 @@
 import React from 'react'
 import "./sidebar.css"
+import { update } from '../features/games/gamesSlice'
+import { useDispatch } from 'react-redux'
+
+
 
 const Sidebar = (props) => {
+  const dispatch =useDispatch()
+
   const modify = (event) => {
     let name = document.getElementById("nameInput").value;
     let score = document.getElementById("scoreValue").value;
@@ -28,7 +34,8 @@ const Sidebar = (props) => {
     }
 
     console.log(name, score, order, props.orderList, actualsort)
-    props.modifyList(name, score, order, actualsort)
+    // props.modifyList(name, score, order, actualsort)
+    dispatch(update({name, score, order, actualsort}))
   }
 
   const clearAll = () => {

@@ -9,19 +9,19 @@ const Content = () => {
     const [modlist, setModlist] = useState([])
     const [orderList, setOrderList] = useState(true);
 
-    useEffect(() => {
-        setLoading(true)
-        fetch('https://public.connectnow.org.uk/applicant-test/')
-            .then((response) => response.json())
-            .then((actualData) => {
-                setfirst(actualData)
-                setModlist(actualData)
-                setLoading(false)
-            })
-            .catch((err) => {
-                console.log(err.message);
-            });
-    }, []);
+    // useEffect(() => {
+    //     setLoading(true)
+    //     fetch('https://public.connectnow.org.uk/applicant-test/')
+    //         .then((response) => response.json())
+    //         .then((actualData) => {
+    //             setfirst(actualData)
+    //             setModlist(actualData)
+    //             setLoading(false)
+    //         })
+    //         .catch((err) => {
+    //             console.log(err.message);
+    //         });
+    // }, []);
 
     const modifyList = (name, score, order, sort) => {
 

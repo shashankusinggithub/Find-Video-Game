@@ -1,7 +1,14 @@
 import React from 'react'
 import "./container.css"
+import { useSelector, useDispatch } from 'react-redux'
+import { update } from '../features/games/gamesSlice'
 
 const Container = (props) => {
+    const tempList = useSelector((state)=> {
+        console.log(state.games)
+        return (state.games.Alllist)})
+    
+
     const convrt = (code) => {
         let date = new Date(code);
         let [month, day, year] = [date.getMonth(), date.getDate(), date.getFullYear()];
@@ -13,7 +20,7 @@ const Container = (props) => {
 
     return (
         <div className='mainContent mt-6'>
-            {props.array.map(name => (
+            {tempList.map(name => (
                 <div className='card-container '>
                     <div className="card-img truncate "></div>
                     <div className='about'>
