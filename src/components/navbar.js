@@ -2,9 +2,11 @@ import React from 'react'
 import "./navbar.css"
 import { NavLink } from "react-router-dom";
 
+
 const Navbar = () => {
 
   return (
+    
     <nav className="nav-container" >
       <NavLink
         to="/"
@@ -17,6 +19,7 @@ const Navbar = () => {
         </div>
       </NavLink>
 
+
       <NavLink
         to="/contact"
         className={({ isActive }) => (isActive ? "" : "hide")}
@@ -26,6 +29,7 @@ const Navbar = () => {
           <span className="nav-title-shadow hide">CONTACT</span>
         </div>
       </NavLink>
+      
     </nav>
   )
 }
