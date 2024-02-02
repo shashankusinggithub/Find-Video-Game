@@ -10,6 +10,7 @@
 }
 
 .nav-container {
+    width: 100vw;
     font-family: "Montserrat",sans-serif;
     color: #fff;
     grid-area: navbar;
@@ -22,7 +23,6 @@
 .nav-item-1, .nav-item-2 {
     opacity: 100% !important; 
     margin-left: 20px;
-    width: 200px;
     height: 60px;
     margin-right: 5%;
     padding-left: 1.3em;
