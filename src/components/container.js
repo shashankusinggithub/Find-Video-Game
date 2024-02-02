@@ -55,9 +55,9 @@ const Container = ({search}) => {
             <Modal isOpen={modal} toggle={toggle} size="lg" centered={true}>
                 <ModalHeader toggle={toggle}>GAME TITLE</ModalHeader>
                 <ModalBody>
-                    <div className="card-container" onClick={{toggle}}>
-                        <div className="card-img truncate ">
-                            <img src={modalDetails.background_image} />
+                    <div className="card-container align-middle px-4" onClick={{toggle}}>
+                        <div className="card-img align-middle truncate ">
+                            <img src={modalDetails.background_image} className="align-middle" />
                         </div>
 
                         <div className="about">
@@ -66,7 +66,7 @@ const Container = ({search}) => {
                             <p className="para">{modalDetails.slug}</p>
                         </div>
                         <div>
-                            <h2 className="score">{parseInt(modalDetails.score) / 10}</h2>
+                            <h2 className="score">{parseInt(modalDetails.rating * 2)}</h2>
                         </div>
                     </div>
                 </ModalBody>
@@ -83,14 +83,13 @@ const Container = ({search}) => {
             {items.map((name) => {
                 return (
                     <>
-                        <div className="card-container  " onClick={() => toggle(name)}>
+                        <div className="card-container px-4 " onClick={() => toggle(name)}>
                             <div className="card-img truncate ">
                                 {' '}
                                 <img src={name.background_image} />{' '}
                             </div>
                             <div className="about">
                                 <h2>{name.name}</h2>
-                                <p className="text-white">{name.background_image}</p>
                                 <h3 className="-mt-3"> Release Date: {convrt(name.released)}</h3>
                                 <p className="para">{name.slug}</p>
                             </div>

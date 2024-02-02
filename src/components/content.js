@@ -13,7 +13,7 @@ const Content = () => {
 
     useEffect(() => {
         setLoading(true);
-        fetch(`https://api.rawg.io/api/games?key=8cf7b7364ad342d2802149d149f81776&search=${search}`)
+        fetch(`https://api.rawg.io/api/games?key=${process.env.REACT_APP_API_KEY}&search=${search}`)
             .then((response) => response.json())
             .then((actualData) => {
                 dispatch(initiateData(actualData));
