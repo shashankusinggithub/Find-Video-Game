@@ -27,7 +27,7 @@ export const gamesSlice = createSlice({
                 if (payload.order === 'first_release_date') {
                     list.sort((a, b) => new Date(a.released) - new Date(b.released));
                 } else if (payload.order === 'rating') {
-                    list.sort((a, b) => a.score - b.score);
+                    list.sort((a, b) => a.rating - b.rating);
                 } else if (payload.order === 'name') {
                     list.sort((a, b) => {
                         if (a.name > b.name) {
