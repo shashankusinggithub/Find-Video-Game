@@ -6,12 +6,9 @@
 }
 
 option, select {
-    height: 2rem;
-    width: 56%;
-    margin-top: 0.5rem;
     background: #182c47;
     /* background: #fff; */
-    border: none;
+    padding: 5px;
     color: #c1d1e8;
   }
 
@@ -32,7 +29,6 @@ option, select {
 
 button {
     background: rgb(0, 0, 250);
-    padding: 1% 5%;
     }
 
 p {
@@ -59,27 +55,4 @@ input, textarea {
     color: #c1d1e8;
   }
 
-input {
-    writing-mode: horizontal-tb !important;
-   
-    text-rendering: auto;
-    color: #c1d1e8;
-    letter-spacing: normal;
-    word-spacing: normal;
-    line-height: normal;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
-    display: inline-block;
-    text-align: start;
-    appearance: auto;
-    -webkit-rtl-ordering: logical;
-    cursor: text;
-    background-color: field;
-    margin: 0em;
-    padding: 1px 2px;
-    border-width: 2px;
-    border-style: inset;
-    
-}
 
